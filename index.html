@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversão de Unidades</title>
+    <link rel="stylesheet" href="style.css"> <!-- Referência ao CSS -->
+    <script src="js.js" defer></script> <!-- Referência ao JavaScript -->
+</head>
+<body>
+    <div class="container">
+        <h1>Conversão de Unidades</h1>
+        
+        <!-- Campo de seleção do tipo -->
+        <label for="tipoConversao">Escolha o tipo de conversão:</label>
+        <select id="tipoConversao" onchange="mostrarCampos()">
+            <option value="distancia">Distância</option>
+            <option value="peso">Peso</option>
+            <option value="temperatura">Temperatura</option>
+        </select>
+
+        <!-- Campos para Distância -->
+        <div id="distanciaCampos" class="campos-conversao" style="display:none;">
+            <label for="origemDistancia">De:</label>
+            <select id="origemDistancia">
+                <option value="km">Kilômetro</option>
+                <option value="m">Metro</option>
+            </select>
+
+            <label for="destinoDistancia">Para:</label>
+            <select id="destinoDistancia">
+                <option value="m">Metro</option>
+                <option value="km">Kilômetro</option>
+            </select>
+
+            <button type="button" onclick="trocarDistancia()">Inverter</button>
+        </div>
+
+        <!-- Campos para Peso -->
+        <div id="pesoCampos" class="campos-conversao" style="display:none;">
+            <label for="origemPeso">De:</label>
+            <select id="origemPeso">
+                <option value="kg">Kilograma</option>
+                <option value="lbs">Libra</option>
+            </select>
+
+            <label for="destinoPeso">Para:</label>
+            <select id="destinoPeso">
+                <option value="lbs">Libra</option>
+                <option value="kg">Kilograma</option>
+            </select>
+        </div>
+
+        <!-- Campos para Temperatura -->
+        <div id="temperaturaCampos" class="campos-conversao" style="display:none;">
+            <label for="origemTemperatura">De:</label>
+            <select id="origemTemperatura">
+                <option value="celsius">Celsius</option>
+                <option value="fahrenheit">Fahrenheit</option>
+            </select>
+
+            <label for="destinoTemperatura">Para:</label>
+            <select id="destinoTemperatura">
+                <option value="fahrenheit">Fahrenheit</option>
+                <option value="celsius">Celsius</option>
+            </select>
+        </div>
+
+        <!-- Campo para inserir o valor -->
+        <label for="valor">Digite o valor a ser convertido:</label>
+        <input type="number" id="valor" placeholder="Digite o valor">
+
+        <!-- Botão para conversão -->
+        <button onclick="converter()">Converter</button>
+
+        <!-- Exibição do resultado -->
+        <p id="resultado"></p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 - Desenvolvido por Quitto</p>
+    </footer>
+</body>
+</html>
